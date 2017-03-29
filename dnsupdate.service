@@ -1,0 +1,12 @@
+[Unit]
+Description=Update Namesilo DNS to current IP
+
+[Service]
+# Modify these values
+Environment=NAMESILO_KEY=123456789
+Environment=NAMESILO_HOST=subdomain
+Environment=NAMESILO_DOMAIN=example.com
+Type=oneshot
+User=nobody
+ExecStart=/usr/local/bin/namesilo_dyndns.py
+Group=systemd-journal
